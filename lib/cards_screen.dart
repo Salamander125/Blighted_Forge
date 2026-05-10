@@ -883,17 +883,7 @@ class _CardsAdminScreenState extends State<CardsAdminScreen> {
                 style: const TextStyle(color: Colors.white),
                 decoration: _inputDec('Descripción', Icons.description_rounded),
                 maxLines: 2,
-              ),
-              const SizedBox(height: 14),
-              TextField(
-                controller: stateIntensityCtrl,
-                keyboardType: TextInputType.number,
-                style: const TextStyle(color: Colors.white),
-                decoration: _inputDec(
-                  'Intensidad del estado',
-                  Icons.flash_on_rounded,
-                ),
-              ),
+              ),             
               const SizedBox(height: 14),
               DropdownButtonFormField<int>(
                 value: rarityVal,
@@ -972,7 +962,7 @@ class _CardsAdminScreenState extends State<CardsAdminScreen> {
                             decoration: _inputDec(
                               'Estado a aplicar',
                               Icons.bubble_chart_rounded,
-                            ),
+                            ),                            
                             items: stateNames.entries
                                 .where((e) => e.key != 0)
                                 .map((e) => DropdownMenuItem(
@@ -982,6 +972,17 @@ class _CardsAdminScreenState extends State<CardsAdminScreen> {
                                 .toList(),
                             onChanged: (v) =>
                                 stateSetter(() => stateToApplyVal = v ?? 1),
+                          ),
+
+                         const SizedBox(height: 14),
+                          TextField(
+                            controller: stateIntensityCtrl,
+                            keyboardType: TextInputType.number,
+                            style: const TextStyle(color: Colors.white),
+                            decoration: _inputDec(
+                              'Intensidad del estado',
+                              Icons.flash_on_rounded,
+                            ),
                           ),
 
                           const SizedBox(height: 14),

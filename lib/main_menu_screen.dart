@@ -39,7 +39,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
   // Ahora la comprobación es 100% a prueba de fallos de mayúsculas/minúsculas
   bool get isAdmin {
     final lower = currentUsername.toLowerCase();
-    return lower == 'salamander' || lower == 'salamander125';
+    return lower == 'salamander' || lower == 'salamander125' || lower == 'profesor';
   }
 
   void _showAdminLoginDialog() {
@@ -503,7 +503,7 @@ class _AdminLoginDialogState extends State<AdminLoginDialog> {
         final String lowerUser = loggedInUser.toLowerCase();
 
         // 2. Si la BDD dice que la contraseña es correcta, verificamos que el usuario sea el admin
-        if (lowerUser == 'salamander' || lowerUser == 'salamander125') {
+        if (lowerUser == 'salamander' || lowerUser == 'salamander125' || lowerUser == 'profesor') {
           if (!mounted) return;
           Navigator.pop(context); // Cierra el modal
           widget.onSuccess(loggedInUser); // Activa el modo admin y repinta la pantalla
